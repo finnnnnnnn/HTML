@@ -1,0 +1,155 @@
+<!DOCTYPEHTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>kidyou</title>
+        <style type="text/css">
+        #progress{
+            width:100%;
+                background-color:#ddd;
+        }
+        #bar{
+            width:0%;
+                height:30px;
+                    background-color:#4CAF50;
+                        text-align:center;
+                            line-height:30px;
+                                color:white;
+        }
+        </style>
+        <script type="text/javascript">
+        
+        function move(){
+            var e=document.getElementById("bar");
+            var width=0;
+            var id=setInterval(frame,10);
+            function frame(){
+                if(width>=100){
+                    clearInterval(id); 
+                    setTimeout(document.write("<img src='https://tse4.mm.bing.net/th?id=OIP.dgCJkMmNv4y3iIgdnlILOQHaE8&pid=Api' />"),3000);
+                    document.write("<h1>你是猪啊是猪</h1>");
+                }else{
+                    width++;
+                    e.style.width=width+'%';
+                    e.innerHTML=width*1+'%';
+                }
+            } 
+        }
+
+        function choose_show(n){
+            if(n=='y'){
+                document.getElementById('first').innerHTML="我就知道";
+            }else if(n=='n'){
+                document.getElementById('first').innerHTML="我不信";
+            }else if(n=='s'){
+                document.getElementById('fifth').innerHTML="你确定?";
+            }else if(n=='ss'){
+                document.getElementById('fifth').innerHTML="是吗";
+            }else if(n=='sss'){
+                document.getElementById('fifth').innerHTML=":)";
+            }else if(n=='dy'){
+                document.getElementById('sixth').innerHTML="我猜是这样";
+            }else if(n=='sy'){
+                document.getElementById('sixth').innerHTML="我还是知道";
+            }else if(n=='df'){
+                document.getElementById('seventh').innerHTML="绝对不是";
+            }else if(n=='cf'){
+                document.getElementById('seventh').innerHTML="这个我是真的知道";
+            }
+        }
+        
+        function txt_show(n){
+            if(n=="second_txt"){
+                document.getElementById('second').innerHTML="fruit:"+document.getElementById('second_txt').value;
+            }else if(n=="third_txt"){
+                document.getElementById('third').innerHTML="wo he ni yi yang";
+            }else if(n=="fourth_txt"){
+                document.getElementById('fourth').innerHTML="<<"+document.getElementById('fourth_txt').value+">>这首歌我也喜欢";
+            }else if(n=="eighth_txt"){
+                document.getElementById('eighth').innerHTML="-_-!";
+            }
+        }
+        </script>
+
+    </head>
+
+    <body>
+        <h2>我能找到最像你的人:)</h2>
+        <div>
+            <p>你喜欢学习吗？</p>
+            <form>
+                <p><input id="y" type="radio" value="Y" onclick="choose_show('y');">Yes</button></p>
+                <p><input id="n" type="radio" value="N" onclick="choose_show('n');">No</button></p>
+            </form>
+                <span id="first">___</span>
+        </div>
+        <div>
+            <p>请告诉我你最喜欢的水果</p>
+            <form>
+            <input type="text" id="second_txt" />
+            <input type="button" value="Submit" onclick="txt_show('second_txt');" />
+            </form>
+            <span id="second">___</span>
+        </div>
+        <div>
+            <p>请告诉我你最喜欢的运动</p>
+            <form>
+                <input type="text" id="third_txt" />
+                <input type="button" value="Submit" onclick="txt_show('third_txt');" />
+            </form>
+            <span id="third">___</span>
+        </div>
+        <div>
+            <p>请告诉我你最喜欢的歌</p>
+            <form>
+                <input type="text" id="fourth_txt" />
+                <input type="button" value="Submit" onclick="txt_show('fourth_txt');" />
+            </form>
+            <span id="fourth">____</span>
+        </div>
+        <div>
+            <p>你胃口大吗？</p>
+            <form>
+                <p><input id="s" type="radio" value="S" onclick="choose_show('s');">一般</button></p>
+                <p><input id="ss" type="radio" value="SS" onclick="choose_show('ss');">大</button></p>
+                <p><input id="sss" type="radio" value="SSS" onclick="coose_show('sss');">超级大</button></p>
+            </form>
+            <span id="fifth">____</span>
+        </div>
+        <div>
+            <p>你是单眼皮还是双眼皮？</p>
+            <form>
+                <p><input id='dy' type="radio" onclick="choose_show('dy');">dan</button></p>
+                <p><input id='sy' type="radio" onclick="choose_show('sy');">shuang</button></p>
+            </form>
+            <span id="sixth">____</span>
+        </div>
+        <div>
+            <p>你是短头发还是长头发？</p>
+            <form>
+                <p><input id='df' type="radio" onclick="choose_show('df');">短头发</button></p>
+                <p><input id='cf' type="radio" onclick="choose_show('cf');">长头发</button></p>
+            </form>
+            <span id="seventh">____</span>
+        </div>
+        <div>
+            <p>最后一个问题,你觉得自己像谁</p>
+            <form>
+                <input type="text" id="eighth_txt" />
+                <input type="button" value="Submit" onclick="txt_show('eighth_txt');" />
+            </form>
+            <span id="eighth">____</span>
+            <br>
+            <br>
+        </div>
+        <div id="progress">
+            <div id="bar">0%</div>
+            <br>
+            <button onclick="move()">开始匹配</button>
+        </div>
+    </body>
+</html>
+
+
+
+
